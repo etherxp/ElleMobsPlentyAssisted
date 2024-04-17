@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ellemobsplenty:block/ancient_furnace_bottom",
+    "east": "ellemobsplenty:block/ancient_furnace_left",
+    "north": "ellemobsplenty:block/ancient_furnace_front",
+    "particle": "ellemobsplenty:block/ancient_furnace_back",
+    "south": "ellemobsplenty:block/ancient_furnace_back",
+    "up": "ellemobsplenty:block/ancient_furnace_top",
+    "west": "ellemobsplenty:block/ancient_furnace_right"
+  }
+}

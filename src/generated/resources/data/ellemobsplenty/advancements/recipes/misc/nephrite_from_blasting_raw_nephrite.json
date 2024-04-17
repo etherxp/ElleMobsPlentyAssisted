@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_nephrite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ellemobsplenty:raw_nephrite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ellemobsplenty:nephrite_from_blasting_raw_nephrite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_nephrite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ellemobsplenty:nephrite_from_blasting_raw_nephrite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

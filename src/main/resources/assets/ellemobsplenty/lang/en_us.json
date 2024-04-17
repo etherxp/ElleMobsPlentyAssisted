@@ -1,0 +1,14 @@
+{
+  "item.ellemobsplenty.nephrite": "Nephrite",
+  "item.ellemobsplenty.raw_nephrite": "Raw Nephrite",
+  "item.ellemobsplenty.raw_crab_meat": "Raw Crab Meat",
+  "item.ellemobsplenty.cooked_crab_meat": "Cooked Crab Meat",
+
+  "block.ellemobsplenty.nephrite_block": "Block of Nephrite",
+  "block.ellemobsplenty.raw_nephrite_block": "Block of Raw Nephrite",
+  "block.ellemobsplenty.nephrite_ore": "Nephrite Ore",
+  "block.ellemobsplenty.deepslate_nephrite_ore": "Deepslate Nephrite Ore",
+  "block.ellemobsplenty.ancient_furnace": "Ancient Furnace",
+
+  "creativetab.ellemobsplenty_tab": "Elle's Mobs N' Plenty"
+}

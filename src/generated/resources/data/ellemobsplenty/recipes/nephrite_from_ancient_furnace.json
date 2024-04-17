@@ -1,0 +1,13 @@
+{
+  "type": "ellemobsplenty:ancient_furnace",
+  "cookingTime": 80,
+  "experience": 0.45,
+  "ingredients": [
+    {
+      "item": "ellemobsplenty:raw_nephrite"
+    }
+  ],
+  "output": {
+    "item": "ellemobsplenty:nephrite"
+  }
+}

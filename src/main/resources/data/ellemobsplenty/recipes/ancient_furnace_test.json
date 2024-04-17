@@ -1,0 +1,13 @@
+{
+  "type":"ellemobsplenty:ancient_furnace",
+  "ingredients": [
+    {
+      "item": "minecraft:raw_iron",
+      "count": 1
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "minecraft:iron_ingot"
+  }
+}

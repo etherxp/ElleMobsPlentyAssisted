@@ -1,6 +1,16 @@
 package net.findsnow.ellemobsplenty;
 
 import com.mojang.logging.LogUtils;
+import net.findsnow.ellemobsplenty.block.ModBlocks;
+import net.findsnow.ellemobsplenty.datagen.ModBlockStateProvider;
+import net.findsnow.ellemobsplenty.entity.ModBlockEntities;
+import net.findsnow.ellemobsplenty.item.ModCreativeModeTabs;
+import net.findsnow.ellemobsplenty.item.ModItems;
+import net.findsnow.ellemobsplenty.recipe.ModRecipes;
+import net.findsnow.ellemobsplenty.screen.AncientFurnaceScreen;
+import net.findsnow.ellemobsplenty.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,6 +33,13 @@ public class ElleMobsPlenty {
     public ElleMobsPlenty() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModRecipes.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -34,7 +51,18 @@ public class ElleMobsPlenty {
 
     }
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.NEPHRITE);
+            event.accept(ModItems.RAW_NEPHRITE);
+        }
 
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.NEPHRITE_BLOCK);
+            event.accept(ModBlocks.RAW_NEPHRITE_BLOCK);
+            event.accept(ModBlocks.NEPHRITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_NEPHRITE_ORE);
+            event.accept(ModBlocks.ANCIENT_FURNACE_BLOCK);
+        }
     }
 
     @SubscribeEvent
@@ -45,6 +73,9 @@ public class ElleMobsPlenty {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                MenuScreens.register(ModMenuTypes.ANCIENT_FURNACE_MENU.get(), AncientFurnaceScreen::new);
+            });
         }
     }
 }

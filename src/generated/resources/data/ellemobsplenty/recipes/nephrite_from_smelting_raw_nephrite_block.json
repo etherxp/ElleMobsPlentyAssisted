@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.45,
+  "group": "nephrite",
+  "ingredient": {
+    "item": "ellemobsplenty:raw_nephrite_block"
+  },
+  "result": "ellemobsplenty:nephrite"
+}
